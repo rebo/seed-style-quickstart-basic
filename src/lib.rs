@@ -90,7 +90,7 @@ pub fn view(model: &Model) -> Node<Msg> {
 }
 
 pub fn themed_view(_model: &Model) -> Node<Msg> {
-    let counter = use_state(|| 0);
+    let counter = use_state(|| 0); // A Seed Hook counter
     div![
         s().display_flex()
             .flex_direction_row()
@@ -104,18 +104,20 @@ pub fn themed_view(_model: &Model) -> Node<Msg> {
                 .min_height(px(200))
                 .display_flex()
                 .flex_direction_column()
-                .padding(&[px(24), px(32), px(48)]),
+                .padding(&[px(24), px(32), px(48)]), // arrays passed to style properties associate values with breakpoints, so this is 24 pixels the smallest breakpoint and 32px at the next etc.
             h1![
                 s().border_bottom_width(px(4))
                     .border_bottom_style_solid()
                     .justify_self_center()
-                    .border_bottom_color(Color::Primary)
+                    .border_bottom_color(Color::Primary) // Color Primary is a theme defined color
                     .font_weight_v700()
                     .font_size(&[px(18), px(24), px(32)]),
                 "Seed Rocks!"
             ],
             p![
                 s().font_size(&[px(12), px(14), px(18)]),
+                s().media("@media only screen and (max-width: 700px)") // example using media queries directly
+                    .color(seed_colors::Green::No4),
                 "The contents of this div are reactive, try shrinking the browser."
             ],
             p![
@@ -134,14 +136,15 @@ pub fn themed_view(_model: &Model) -> Node<Msg> {
                 s().hover().bg_color(Color::Primary),
                 s().active().bg_color(Color::DarkPrimary),
                 "Click Me",
-                counter.on_click(|c| *c += 1)
+                counter.on_click(|c| *c += 1) // Example of seed hooks usage incrementing a counter.
             ],
             only_and_above(Breakpoint::Medium, || {
+                // conditional rendering with `only_and_above` renders the block if at Medium Breakpoint and above.
                 let hidden_counter = use_state(|| 0);
                 div![
                     s().display_flex().flex_direction_column(),
                 p![
-                "This is only rendered at larger Breakpoints. This is not display: hidden; it is actually conditional rendering. Notice it keeps it's count even when hidden!"],
+                "This is only rendered at larger breakpoints. This is not display: hidden; it is actually conditional rendering. Notice it keeps its count even when hidden!"],
                 button![
                     s().bg_color(hsl(20,70,50))
                     .radius(px(5))
