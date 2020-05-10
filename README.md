@@ -21,7 +21,31 @@ Seed Style has many, features including:
 * convienience methods
 * global styling support
 
-This quickstart just demonstrates a few of the features.
+This quickstart demonstrates just a few of these features.
+
+**Basic Styling**
+
+Add a style to an element by using `s()` followed by a number of property method calls. All properties are optionally typed, however you can also 
+use strings for any property.  Properties with single option variants (for instance `display: grid;`) can called using a variant prefix. I.e. `display_grid()`.
+
+Useful helper functions :
+
+* `rgb()`, `rgba()` and `hsl()` create a `CssColor` value which can be used in any property that accepts a color value.
+* `px()`, `em()`, `rem()` `cm()` can be used in any property that can accept an exact length.
+* `pc()` can be used in any property that accepts a percentage.
+
+Example:
+
+```
+div![
+    s().background_color(hsl(20,70,30))
+        .border_radius(px(4))
+        .padding(px(8))
+        .display_flex()
+        .font_size(px(24)),
+    "This is a styled flex div
+]
+```
 
 **To get started:**
 

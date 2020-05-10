@@ -15,7 +15,7 @@ use app_theme::*;
 //
 // Component Style - Define CSS styles for html elements.
 // Theming Support -Define themes for your app so common styles can set centrally
-// Layout - Declare Application layout ahead of time in a context agnostic way.
+// Layout - Declare Application layout ahead of time in a context agnostic way. (Not used in seed quickstart)
 
 // Not all of these need to be used, all features are optional.
 //
@@ -31,10 +31,10 @@ pub enum Msg {
     WindowResized,
 }
 
-// Update optionally hamdles WindowResized. For performance reasons we dont want to
+// Update optionally handles WindowResized. For performance reasons we dont want to
 // re-render the app on every window resize, only if the resize takes the window into new breakpoint
 // this step could be completely left off and just added in at the end of a design once all breakpoints have been
-// firmly decided.
+// defined.
 fn update(msg: Msg, _model: &mut Model, orders: &mut impl Orders<Msg>) {
     match msg {
         Msg::WindowResized => {
@@ -55,7 +55,7 @@ fn init(_url: Url, orders: &mut impl Orders<Msg>) -> Model {
     // .activate_init_styles should be called only once
     GlobalStyle::default()
         // ensure all buttons are centred by default and outline free
-        .style("button", s().align_self_center().outline_style_none())
+        .style("button", s().text_align_center().outline_style_none())
         //ensure box-sizing: border-box() for everything
         .style("html", s().box_sizing_border_box())
         .style("img", s().box_sizing_content_box())
@@ -117,7 +117,7 @@ pub fn themed_view(_model: &Model) -> Node<Msg> {
             p![
                 s().font_size(&[px(12), px(14), px(18)]),
                 s().media("@media only screen and (max-width: 700px)") // example using media queries directly
-                    .color(seed_colors::Green::No4),
+                    .color(seed_colors::Red::No6),
                 "The contents of this div are reactive, try shrinking the browser."
             ],
             p![
