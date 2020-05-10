@@ -10,7 +10,7 @@ use seed_style::*;
 // several css librarys: https://theme-ui.com/theme-spec/
 //
 // A Theme object is made up of named css values called aliases
-// as well as scales for css values/
+// as well as scales for css values.
 //
 // Having a scale is useful for things like sizes and spacing
 // because you can have consistent layout throughout your app.  For instance pixel gaps
@@ -87,7 +87,7 @@ pub fn theme() -> Theme {
         .set_color(Color::MainText, CssColor::Hex(0x000000))
         .set_color(Color::Primary, CssColor::Hsl(100.0, 70.0, 40.0))
         .set_color(Color::MutedPrimary, CssColor::Hsl(100.0, 50.0, 50.0))
-        .set_color(Color::Secondary, CssColor::Hex(0xBBBBBB)) // or use the hsl shortcut
+        .set_color(Color::Secondary, CssColor::Hex(0xBBBBBB))
         .set_color(Color::MutedSecondary, CssColor::Hex(0xDDDDDD)) // or use the hsl shortcut
         .set_color(Color::Highlight, hsl(310, 70, 85))
         .set_color(Color::DarkPrimary, hsl(200, 70, 35))
@@ -103,7 +103,7 @@ pub fn theme() -> Theme {
     // color, space, size, font_size, font, border, border_width, border_style, border_radius, transition
     // line_height, letter_spacing,
 
-    //scales
+    // scales
     // https://styled-system.com/guides/array-scales/
     let theme = theme
         .border_width_scale(&[px(2), px(4), px(8), px(12), px(16), px(24), px(32)])
@@ -116,8 +116,8 @@ pub fn theme() -> Theme {
         // Breakpoint scales for 'in-property' setting of values that are responsive to breakpoints
         .breakpoint_scale([600, 960, 1280, 1920]); // standard-material-ui breakpoints
 
-    // Global styles to apply to any selectors you choose based on theme.
-    // When a theme is changed new global styles can be used.
+    // Global styles to apply to any selectors you choose.
+    // When a theme is changed for a new one then that themes global styles are then used.
     theme.set_global_styles(
         GlobalStyle::default()
             .style("p", s().padding(px(24)))

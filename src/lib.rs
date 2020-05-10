@@ -130,7 +130,7 @@ pub fn themed_view(_model: &Model) -> Node<Msg> {
                 s().bg_color(Color::MutedPrimary)
                     .radius(px(5))
                     .my(px(20))
-                    .justify_self_center()
+                    .align_self_center()
                     .padding_x(&[px(18), px(24)])
                     .padding_y(&[px(8), px(12)]),
                 s().hover().bg_color(Color::Primary),
@@ -149,6 +149,7 @@ pub fn themed_view(_model: &Model) -> Node<Msg> {
                     s().bg_color(hsl(20,70,50))
                     .radius(px(5))
                     .my(px(20))
+                    .align_self_center()
                     .padding_x(&[px(18), px(24)])
                     .padding_y(&[px(8), px(12)]),
                 s().hover().bg_color(hsl(20,80,70)),
