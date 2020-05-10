@@ -6,7 +6,20 @@
 
 This is a quickstart Seed app demonstrating the final api surface for Seed Style.
 
-Seed Style has many, features including optional typed CSS properties, breakpoint-conditional rendering, full layout system including composition and first class layouts, integrated theme support, style reuse, media queries, animation and keyframe support, convienience methods and global styling support.
+Seed Style has many, features including:
+
+* optional typed CSS properties and values
+* integrated theme support
+* atomic design
+* full layout system including composition and first class layouts
+* conditional rendering on breakpoints
+* pseudo selector support
+* combinator support
+* media query and breakpoint support
+* style composition and reuse
+* animation and keyframe support
+* convienience methods
+* global styling support
 
 This quickstart just demonstrates a few of the features.
 
