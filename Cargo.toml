@@ -11,8 +11,8 @@ crate-type = ["cdylib"]
 wasm-bindgen = "^0.2.62"
 seed = "0.7.0"
 seed_hooks = "0.1.3"
-# seed_style = { package = "seed_style_preview", version = "0.1.0" }
-seed_style = {package = "seed_style_preview",  path = "../seed_style"}
+seed_style = { package = "seed_style_preview", version = "0.1.4" }
+# seed_style = {package = "seed_style_preview",  path = "../seed_style"}
 rand = "0.7.3"
 
 
